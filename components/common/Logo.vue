@@ -4,7 +4,7 @@
   </nuxt-link>
 </template>
 <script>
-import SvgLogo from '../../assets/logo-small.svg'
+import SvgLogo from '../../assets/logo.svg'
 export default {
   name: 'Logo',
   components: {

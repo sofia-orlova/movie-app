@@ -176,8 +176,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "assets/main";
 a {
-  text-decoration: none;
   color: #000000;
 }
 .main-menu {
