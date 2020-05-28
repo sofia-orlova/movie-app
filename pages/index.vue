@@ -2,30 +2,18 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        movie-app
-      </h1>
-      <h2 class="subtitle">
-        My outstanding Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
-    {{ getMovie() }}
+    <div>
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Найти фильм, сериал, персону..."
+      >
+      <button>GO</button>
+    </div>
+    <div v-for="(searchItem, index) in searchResults" :key="index">
+      {{ searchItem }}
+    </div>
   </div>
 </template>
 
@@ -38,9 +26,23 @@ export default {
     Logo
   },
   layout: 'default',
+  data () {
+    return {
+      searchResults: [],
+      searchQuery: ''
+    }
+  },
+  created () {
+    this.getMovie()
+  },
   methods: {
-    getMovie () {
-      this.$axios.get('/movie/550', {})
+    async getMovie () {
+      const { data } = await this.$axios.get('/search/movie', {
+        params: {
+          query: 'Джон Уик'
+        }
+      })
+      this.searchResults = data.results
     }
   }
 }
