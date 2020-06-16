@@ -1,5 +1,5 @@
 <template>
-  <div class="main-menu-wrapper">
+  <div class="main-menu__wrapper">
     <el-row type="flex" justify="space-between">
       <el-col :span="3" class="logo-wrapper">
         <logo />
@@ -23,11 +23,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  @import "../../assets/main";
-.main-menu-wrapper {
-  background: #101c43;
+@import "../../assets/main";
+.main-menu__wrapper {
+  background: $primary-color;
     a {
-      color: #000000;
+      color: $black;
     }
     .logo-wrapper {
       align-self: center;
@@ -38,14 +38,14 @@ export default {
         border: none;
         font-weight: 700;
         .el-menu-item{
-          color: #ffffff;
+          color: $white;
           &:hover {
             background-color: transparent;
           }
         }
         .el-submenu {
           &__title {
-            color: #ffffff;
+            color: $white;
             &:hover {
               background-color: transparent;
             }
@@ -61,5 +61,4 @@ export default {
       }
     }
 }
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="left-navigation__wrapper">
     <el-menu
       :default-active="activeIndex"
       class="main-menu"
@@ -176,9 +176,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/main";
 a {
   text-decoration: none;
-  color: #000000;
+  color: $black;
 }
 .main-menu {
   /deep/ {
