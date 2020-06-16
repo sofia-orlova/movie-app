@@ -1,9 +1,21 @@
 <template>
   <div>
+    <preloader v-if="loading == true" />
     <nuxt />
   </div>
 </template>
-
+<script>
+import { mapState } from 'vuex'
+import Preloader from '../components/Preloader'
+export default {
+  components: { Preloader },
+  computed: {
+    ...mapState('preloader', {
+      loading: state => state.loading
+    })
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

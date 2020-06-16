@@ -35,7 +35,9 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    '@plugins/axios'
+    '@plugins/axios',
+    '@plugins/helpers/getImageLink',
+    '@plugins/helpers/preloader'
   ],
   /*
   ** Nuxt.js dev-modules
