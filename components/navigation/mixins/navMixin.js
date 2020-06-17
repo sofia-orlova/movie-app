@@ -9,19 +9,19 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.films.subMenu.popular'),
-                  pageIndex: 'popular-films'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.films.subMenu.watchingNow'),
-                  pageIndex: 'watching-now-films'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.films.subMenu.comingSoon'),
-                  pageIndex: 'coming-soon-films'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.films.subMenu.topRated'),
-                  pageIndex: 'top-rated-films'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -30,19 +30,19 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.tvShows.subMenu.popular'),
-                  pageIndex: 'popular-tv-shows'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.tvShows.subMenu.airingToday'),
-                  pageIndex: 'airing-today-tv-shows'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.tvShows.subMenu.onTv'),
-                  pageIndex: 'on-tv-shows'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.tvShows.subMenu.topRated'),
-                  pageIndex: 'top-rated-tv-shows'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -51,7 +51,7 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.people.subMenu.popular'),
-                  pageIndex: 'popular-people'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -60,19 +60,19 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.more.subMenu.discussions'),
-                  pageIndex: 'discussions'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.more.subMenu.leaderboard'),
-                  pageIndex: 'leaderboard'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.more.subMenu.support'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.more.subMenu.api'),
-                  pageIndex: 'api-info'
+                  pageIndex: 'contact-us'
                 }
               ]
             }
@@ -86,11 +86,11 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.addNew.subMenu.addNewFilm'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.addNew.subMenu.addNewTvShow'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -107,23 +107,23 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.main.subMenu.about'),
-                  pageIndex: 'about'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.main.subMenu.support'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.main.subMenu.supportForums'),
-                  pageIndex: 'support-forums'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.main.subMenu.api'),
-                  pageIndex: 'api-info'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.main.subMenu.systemStatus'),
-                  pageIndex: 'system-status'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -132,19 +132,19 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.participation.subMenu.articles'),
-                  pageIndex: 'articles'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.participation.subMenu.otherApps'),
-                  pageIndex: 'other-apps'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.participation.subMenu.addNewFilm'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.participation.subMenu.addNewTvShow'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -153,19 +153,19 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.community.subMenu.guides'),
-                  pageIndex: 'about'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.community.subMenu.forum'),
-                  pageIndex: 'forum'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.community.subMenu.hallOfFame'),
-                  pageIndex: 'hall-of-fame'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.community.subMenu.tweeter'),
-                  pageIndex: 'support'
+                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -174,15 +174,15 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.rights.subMenu.termsOfUse'),
-                  pageIndex: 'terms-of-use'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.rights.subMenu.apiTermsOfUse'),
-                  pageIndex: 'about'
+                  pageIndex: 'contact-us'
                 },
                 {
                   title: this.$t('menu.rights.subMenu.privacyPolicy'),
-                  pageIndex: 'privacy-policy'
+                  pageIndex: 'contact-us'
                 }
               ]
             }

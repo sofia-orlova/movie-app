@@ -80,7 +80,7 @@ export default {
 a {
   display: block;
   text-decoration: none;
-  color: #000000;
+  color: $black;
   width: 100%;
 }
 </style>

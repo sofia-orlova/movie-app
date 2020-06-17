@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="localePath('index')"
-    class="main-footer-logo"
+    class="main-footer__logo"
   >
     <logo-square-svg />
   </nuxt-link>
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .main-footer-logo {
+  .main-footer__logo {
     display: block;
     max-width: 200px;
     margin: 0 auto;

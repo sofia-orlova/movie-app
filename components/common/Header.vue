@@ -1,13 +1,13 @@
 <template>
-  <div class="main-menu-wrapper">
+  <div class="main-menu__wrapper">
     <el-row type="flex" justify="space-between" class="main-horizontal-menu">
-      <el-col :span="3" class="logo-wrapper">
+      <el-col :span="4" class="logo-wrapper">
         <logo />
       </el-col>
-      <el-col :span="14">
+      <el-col :span="15">
         <LeftNavigation />
       </el-col>
-      <el-col :span="7">
+      <el-col :span="5">
         <RightNavigation />
       </el-col>
     </el-row>
@@ -30,38 +30,43 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../assets/main";
-.main-menu-wrapper {
-  background: #0d253f;
-  .logo-wrapper {
-    align-self: center;
-  }
-  /deep/ {
-    .el-menu {
-      background: transparent;
-      border: none;
-      .el-menu-item {
-        color: #ffffff;
-        &:hover {
-          background-color: transparent;
-        }
-      }
-      .el-submenu {
-        &__title {
-          color: #ffffff;
+.main-menu__wrapper {
+  background: $primary-color;
+  padding: 0 0 0 10px;
+    a {
+      color: $black;
+    }
+    .logo-wrapper {
+      align-self: center;
+    }
+    /deep/ {
+      .el-menu {
+        background: transparent;
+        border: none;
+        font-weight: 700;
+        .el-menu-item{
+          color: $white;
           &:hover {
             background-color: transparent;
           }
         }
+        .el-submenu {
+          &__title {
+            color: $white;
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
       }
-    }
-    .main-menu {
-      /deep/ {
-        .el-submenu__icon-arrow {
-          display: none;
+      .main-menu {
+        /deep/ {
+          .el-submenu__icon-arrow {
+            display: none;
+          }
         }
       }
     }
-  }
 }
 @media all and (max-width: 981px) {
   .main-horizontal-menu {
@@ -73,4 +78,5 @@ export default {
     display: none;
   }
 }
+
 </style>

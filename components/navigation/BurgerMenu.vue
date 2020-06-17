@@ -51,11 +51,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "assets/main";
 /deep/ {
   .el-menu {
     font-weight: 700;
     a {
-      color: #ffffff;
+      color: $white;
       font-weight: 400;
     }
   }
@@ -81,7 +82,7 @@ button {
   pointer-events: all;
   transition: transform .6s cubic-bezier(.165,.84,.44,1);
   .burger-bar {
-    background-color: #ffffff;
+    background-color: $white;
     position: absolute;
     top: 50%;
     right: 6px;
