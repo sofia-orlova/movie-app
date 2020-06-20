@@ -1,10 +1,11 @@
 <template>
   <el-menu
-    :default-active="activeIndex"
+    :default-active="menuActiveItem($route.name)"
     :class="menuClass"
     :mode="type"
     active-text-color="#ffd04b"
   >
+    {{menuActiveItem($route.name)}}
     <template
       v-for="(menuItem, menuIndex) in menuItems"
     >
@@ -62,9 +63,9 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      activeIndex: '0'
+  computed: {
+    menuActiveItem () {
+      return routeName => routeName.substring(0, routeName.indexOf('__'))
     }
   },
   methods: {

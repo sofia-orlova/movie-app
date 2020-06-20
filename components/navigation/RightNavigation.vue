@@ -15,16 +15,6 @@ export default {
   mixins: [navMixin],
   components: {
     NavMenu
-  },
-  data () {
-    return {
-      activeIndex: '0'
-    }
-  },
-  methods: {
-    handleSelect (key, keyPath, item) {
-      console.log(key, keyPath, item)
-    }
   }
 }
 </script>

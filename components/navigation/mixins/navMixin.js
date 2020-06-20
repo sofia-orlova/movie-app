@@ -5,95 +5,23 @@ export default {
         leftNavigation: {
           menu: [
             {
+              title: this.$t('menu.homepage.title'),
+              pageIndex: 'index'
+            },
+            {
               title: this.$t('menu.films.title'),
               subMenu: [
                 {
                   title: this.$t('menu.films.subMenu.popular'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.films.subMenu.watchingNow'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.films.subMenu.comingSoon'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.films.subMenu.topRated'),
-                  pageIndex: 'contact-us'
-                }
-              ]
-            },
-            {
-              title: this.$t('menu.tvShows.title'),
-              subMenu: [
-                {
-                  title: this.$t('menu.tvShows.subMenu.popular'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.tvShows.subMenu.airingToday'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.tvShows.subMenu.onTv'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.tvShows.subMenu.topRated'),
-                  pageIndex: 'contact-us'
-                }
-              ]
-            },
-            {
-              title: this.$t('menu.people.title'),
-              subMenu: [
-                {
-                  title: this.$t('menu.people.subMenu.popular'),
-                  pageIndex: 'contact-us'
-                }
-              ]
-            },
-            {
-              title: this.$t('menu.more.title'),
-              subMenu: [
-                {
-                  title: this.$t('menu.more.subMenu.discussions'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.more.subMenu.leaderboard'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.more.subMenu.support'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.more.subMenu.api'),
-                  pageIndex: 'contact-us'
+                  pageIndex: 'popular-films'
                 }
               ]
             }
+
           ]
         },
         rightNavigation: {
           menu: [
-            {
-              title: '',
-              icon: 'el-icon-plus',
-              subMenu: [
-                {
-                  title: this.$t('menu.addNew.subMenu.addNewFilm'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.addNew.subMenu.addNewTvShow'),
-                  pageIndex: 'contact-us'
-                }
-              ]
-            },
             {
               title: this.$t('menu.contactUs.title'),
               pageIndex: 'contact-us'
@@ -195,6 +123,9 @@ export default {
     messages: {
       ru: {
         menu: {
+          homepage: {
+            title: 'Главная'
+          },
           films: {
             title: 'Фильмы',
             subMenu: {
