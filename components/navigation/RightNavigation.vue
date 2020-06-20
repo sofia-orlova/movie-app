@@ -12,12 +12,12 @@ import navMixin from './mixins/navMixin'
 import NavMenu from './Menu'
 export default {
   name: 'RightNavigation',
-  mixins: [navMixin],
   components: {
     NavMenu
-  }
+  },
+  mixins: [navMixin]
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/menu-styles";
+@import "../../assets/scss/menu/menu-styles";
 </style>

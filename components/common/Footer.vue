@@ -43,7 +43,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "assets/main";
+@import "../../assets/scss/main";
+
 .main-footer__wrapper {
   background: #0d253f;
   padding: 30px 0 50px 10px;

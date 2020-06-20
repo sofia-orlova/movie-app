@@ -7,7 +7,7 @@
   </nuxt-link>
 </template>
 <script>
-import LogoSquareSvg from '../../assets/logo-square.svg'
+import LogoSquareSvg from '../../assets/images/svg/logo-square.svg'
 export default {
   name: 'LogoSquare',
   components: { LogoSquareSvg }

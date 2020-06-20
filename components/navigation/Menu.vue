@@ -1,11 +1,9 @@
 <template>
   <el-menu
-    :default-active="menuActiveItem($route.name)"
     :class="menuClass"
+    :default-active="menuActiveItem($route.name)"
     :mode="type"
-    active-text-color="#ffd04b"
   >
-    {{menuActiveItem($route.name)}}
     <template
       v-for="(menuItem, menuIndex) in menuItems"
     >
@@ -22,21 +20,19 @@
         <el-menu-item
           v-for="(subMenuItem, subMenuIndex) in menuItem.subMenu"
           :key="subMenuIndex"
-          :index="`${menuIndex}${subMenuIndex}-sub  `"
+          :index="subMenuItem.pageIndex"
           @click="hideMenu"
         >
           <nuxt-link
-            :to="localePath(`${subMenuItem.pageIndex}`)"
+            :to="localePath(subMenuItem.pageIndex)"
           >
             {{ subMenuItem.title }}
           </nuxt-link>
         </el-menu-item>
       </el-submenu>
-      <el-menu-item v-else :key="menuIndex">
+      <el-menu-item v-else :key="menuIndex" :index="menuItem.pageIndex">
         <nuxt-link
-          :to="localePath({
-            name: menuItem.pageIndex
-          })"
+          :to="localePath(menuItem.pageIndex)"
         >
           <i v-if="menuItem.icon" :class="menuItem.icon" />
           {{ menuItem.title }}
@@ -77,7 +73,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/main";
+@import "../../assets/scss/main";
+
 a {
   display: block;
   text-decoration: none;

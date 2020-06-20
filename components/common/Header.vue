@@ -29,7 +29,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/main";
+@import "../../assets/scss/main";
+
 .main-menu__wrapper {
   background: $primary-color;
   padding: 0 0 0 10px;

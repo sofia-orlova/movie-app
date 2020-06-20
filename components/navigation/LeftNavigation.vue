@@ -19,7 +19,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/menu-styles";
+@import "../../assets/scss/menu/menu-styles";
 /*.main-menu {*/
 /*  /deep/ {*/
 /*    .el-menu-horizontal {*/
