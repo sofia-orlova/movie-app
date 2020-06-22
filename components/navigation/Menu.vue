@@ -25,6 +25,7 @@
         >
           <nuxt-link
             :to="localePath(subMenuItem.pageIndex)"
+            class="main-menu__link"
           >
             {{ subMenuItem.title }}
           </nuxt-link>
@@ -33,6 +34,7 @@
       <el-menu-item v-else :key="menuIndex" :index="menuItem.pageIndex">
         <nuxt-link
           :to="localePath(menuItem.pageIndex)"
+          class="main-menu__link"
         >
           <i v-if="menuItem.icon" :class="menuItem.icon" />
           {{ menuItem.title }}
@@ -74,11 +76,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
-
-a {
-  display: block;
-  text-decoration: none;
-  color: $black;
-  width: 100%;
+.main-menu {
+  &__link {
+    display: block;
+    color: $black;
+    width: 100%;
+  }
 }
 </style>

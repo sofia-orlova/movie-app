@@ -19,6 +19,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/main";
 @import "../../assets/scss/menu/menu-styles";
 /*.main-menu {*/
 /*  /deep/ {*/

@@ -1,8 +1,8 @@
 <template>
-  <div class="main-footer__wrapper">
+  <div class="main-footer">
     <el-row
       type="flex"
-      class="main-footer__container"
+      class="main-footer__wrapper"
     >
       <el-col class="main-footer__logo">
         <logo-square />
@@ -25,6 +25,7 @@
           >
             <nuxt-link
               :to="localePath(`${subMenuItem.pageIndex}`)"
+              class="main-footer__link"
             >
               {{ subMenuItem.title }}
             </nuxt-link>
@@ -45,10 +46,10 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
 
-.main-footer__wrapper {
+.main-footer {
   background: #0d253f;
   padding: 30px 0 50px 10px;
-  .main-footer__container {
+  &__wrapper {
     .main-footer__menu {
       padding: 20px 10px 20px 10px;
       .main-footer__menu-title{
@@ -61,11 +62,11 @@ export default {
       .main-footer__submenu-title {
         line-height: 1.5;
         margin: 0 0 7px 0;
-        a {
-          color: #ffffff;
-        }
       }
     }
+  }
+  .main-footer__link {
+    color: #ffffff;
   }
 }
 @media all
@@ -76,7 +77,7 @@ and (max-width: 830px) {
   }
 }
 @media all and (max-width: 620px) {
-  .main-footer__container {
+  .main-footer__wrapper {
     display: inline-block;
     text-align: center;
   }

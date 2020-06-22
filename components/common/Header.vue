@@ -30,13 +30,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
+@import "../../assets/scss/menu/menu-styles";
 
 .main-menu__wrapper {
   background: $primary-color;
   padding: 0 0 0 10px;
-    a {
-      color: $black;
-    }
     .logo-wrapper {
       align-self: center;
     }
@@ -44,7 +42,6 @@ export default {
       .el-menu {
         background: transparent;
         border: none;
-        font-weight: 700;
         .el-menu-item{
           color: $white;
           &:hover {
