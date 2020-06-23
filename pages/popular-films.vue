@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
-  layout: 'default'
+  name: 'PopularFilms',
+  layout: 'main'
 }
 </script>

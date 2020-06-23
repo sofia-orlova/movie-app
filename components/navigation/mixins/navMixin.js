@@ -36,22 +36,6 @@ export default {
                 {
                   title: this.$t('menu.main.subMenu.about'),
                   pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.main.subMenu.support'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.main.subMenu.supportForums'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.main.subMenu.api'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.main.subMenu.systemStatus'),
-                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -60,18 +44,6 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.participation.subMenu.articles'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.participation.subMenu.otherApps'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.participation.subMenu.addNewFilm'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.participation.subMenu.addNewTvShow'),
                   pageIndex: 'contact-us'
                 }
               ]
@@ -82,18 +54,6 @@ export default {
                 {
                   title: this.$t('menu.community.subMenu.guides'),
                   pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.community.subMenu.forum'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.community.subMenu.hallOfFame'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.community.subMenu.tweeter'),
-                  pageIndex: 'contact-us'
                 }
               ]
             },
@@ -102,14 +62,6 @@ export default {
               subMenu: [
                 {
                   title: this.$t('menu.rights.subMenu.termsOfUse'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.rights.subMenu.apiTermsOfUse'),
-                  pageIndex: 'contact-us'
-                },
-                {
-                  title: this.$t('menu.rights.subMenu.privacyPolicy'),
                   pageIndex: 'contact-us'
                 }
               ]

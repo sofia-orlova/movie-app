@@ -12,7 +12,7 @@ export default {
   components: {
     Logo
   },
-  layout: 'default'
+  layout: 'main'
 }
 </script>
 

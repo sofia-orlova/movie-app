@@ -1,19 +1,13 @@
 <template>
-  <div>
-    <main-header />
-    <nuxt />
-    <main-footer />
-  </div>
+  <nuxt />
 </template>
 
 <script>
-import MainHeader from '../components/common/Header'
-import MainFooter from '../components/common/Footer'
 export default {
-  components: { MainHeader, MainFooter }
+  name: 'Default'
 }
 </script>
 
-<style lang="scss">
-@import "../assets/scss/main";
+<style scoped>
+
 </style>

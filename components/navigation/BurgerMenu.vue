@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      id="burger"
+      id="burger-button"
       :class="{'active' : isOpen}"
       @click="toggle"
     >
@@ -52,23 +52,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
+@import "../../assets/scss/menu/menu-styles";
 
 /deep/ {
   .el-menu {
-    font-weight: 700;
     a {
       color: $white;
-      font-weight: 400;
     }
   }
 }
-button {
-  cursor: pointer;
-  &:focus {
-    outline: 0;
-  }
-}
-#burger {
+#burger-button {
   padding: 10px 0 10px 5px;
 }
 .burger-button {
@@ -82,6 +75,10 @@ button {
   z-index: 999;
   pointer-events: all;
   transition: transform .6s cubic-bezier(.165,.84,.44,1);
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
   .burger-bar {
     background-color: $white;
     position: absolute;
@@ -108,7 +105,7 @@ button {
     transform: translateY(6px);
   }
 }
-#burger.active {
+#burger-button.active {
   .burger-button {
     transform: rotate(-180deg);
   }

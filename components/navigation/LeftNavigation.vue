@@ -21,12 +21,5 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
 @import "../../assets/scss/menu/menu-styles";
-/*.main-menu {*/
-/*  /deep/ {*/
-/*    .el-menu-horizontal {*/
-/*      background: #3b8070;*/
-/*    }*/
-/*  }*/
-/*}*/
 
 </style>

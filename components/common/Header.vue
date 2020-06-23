@@ -1,7 +1,7 @@
 <template>
-  <div class="main-menu__wrapper">
-    <el-row type="flex" justify="space-between" class="main-horizontal-menu">
-      <el-col :span="4" class="logo-wrapper">
+  <div class="header-menu">
+    <el-row type="flex" justify="space-between" class="header-menu__horizontal-menu">
+      <el-col :span="4" class="header-menu__logo-wrapper">
         <logo />
       </el-col>
       <el-col :span="15">
@@ -12,7 +12,7 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col class="main-burger-menu">
+      <el-col class="header-menu__burger-menu">
         <BurgerMenu />
       </el-col>
     </el-row>
@@ -32,11 +32,14 @@ export default {
 @import "../../assets/scss/main";
 @import "../../assets/scss/menu/menu-styles";
 
-.main-menu__wrapper {
+.header-menu {
   background: $primary-color;
-  padding: 0 0 0 10px;
-    .logo-wrapper {
+  padding-left: 10px;
+    .header-menu__logo-wrapper {
       align-self: center;
+    }
+    .header-menu__burger-menu {
+      display: none;
     }
     /deep/ {
       .el-menu {
@@ -67,13 +70,11 @@ export default {
     }
 }
 @media all and (max-width: 981px) {
-  .main-horizontal-menu {
+  .header-menu__horizontal-menu {
     display: none;
   }
-}
-@media all and (min-width: 982px) {
-  .main-burger-menu {
-    display: none;
+  .header-menu__burger-menu {
+    display: block !important;
   }
 }
 
