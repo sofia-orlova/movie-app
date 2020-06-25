@@ -53,7 +53,7 @@ export default {
     .footer-menu__menu {
       padding: 20px 10px;
       .footer-menu__menu-title{
-        color: #ffffff;
+        color: $white;
         font-weight: 700;
         font-size: 20px;
         text-transform: uppercase;
@@ -66,7 +66,7 @@ export default {
     }
   }
   .footer-menu__link {
-    color: #ffffff;
+    color: $white;
   }
 }
 @media all

@@ -81,40 +81,7 @@ export default {
           films: {
             title: 'Фильмы',
             subMenu: {
-              popular: 'Популярные',
-              watchingNow: 'Смотрят сейчас',
-              comingSoon: 'Ожидаемые',
-              topRated: 'Лучшие'
-            }
-          },
-          tvShows: {
-            title: 'Сериалы',
-            subMenu: {
-              popular: 'Популярные',
-              airingToday: 'В эфире сегодня',
-              onTv: 'На телевидении',
-              topRated: 'Лучшие'
-            }
-          },
-          people: {
-            title: 'Люди',
-            subMenu: {
               popular: 'Популярные'
-            }
-          },
-          more: {
-            title: 'Еще',
-            subMenu: {
-              discussions: 'Обсуждения',
-              leaderboard: 'Доска почета',
-              support: 'Поддержка',
-              api: 'API'
-            }
-          },
-          addNew: {
-            subMenu: {
-              addNewFilm: 'Добавить новый фильм',
-              addNewTvShow: 'Добавить новый сериал'
             }
           },
           contactUs: {
@@ -123,37 +90,25 @@ export default {
           main: {
             title: 'Главное',
             subMenu: {
-              about: 'О TMDb',
-              support: 'Связаться с нами',
-              supportForums: 'Форумы поддержки',
-              api: 'API',
-              systemStatus: 'Статус системы'
+              about: 'О TMDb'
             }
           },
           participation: {
             title: 'Учавствуйте',
             subMenu: {
-              articles: 'Писание об участии',
-              otherApps: 'Сторонние приложения',
-              addNewFilm: 'Добавить новый фильм',
-              addNewTvShow: 'Добавить новый сериал'
+              articles: 'Писание об участии'
             }
           },
           community: {
             title: 'Сообщество',
             subMenu: {
-              guides: 'Руководства',
-              forum: 'Обсуждения',
-              hallOfFame: 'Доска почета',
-              tweeter: 'Twitter'
+              guides: 'Руководства'
             }
           },
           rights: {
             title: 'О праве',
             subMenu: {
-              termsOfUse: 'Условия использования',
-              apiTermsOfUse: 'API Правила использования',
-              privacyPolicy: 'Политика конфеденциальности'
+              termsOfUse: 'Условия использования'
             }
           }
         }
