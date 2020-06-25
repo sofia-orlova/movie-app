@@ -47,7 +47,7 @@ export default {
 @import "../../assets/scss/main";
 
 .footer-menu {
-  background: #0d253f;
+  background: $primary-color;
   padding-top: 30px;
   &__wrapper {
     .footer-menu__menu {
