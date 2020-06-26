@@ -2,19 +2,22 @@
   <div class="container">
     <div>
       <logo />
+      <trends-carousel />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '../components/common/Logo.vue'
+import TrendsCarousel from '../components/TrendsCarousel'
 
 export default {
   name: 'HomePage',
   components: {
-    Logo
+    Logo,
+    TrendsCarousel
   },
-  layout: 'default'
+  layout: 'main'
 }
 </script>
 
