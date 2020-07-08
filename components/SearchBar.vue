@@ -13,6 +13,7 @@
           <el-button
             type="submit"
             class="search-button"
+            @click="submitSearch"
           >
             Search
           </el-button>
