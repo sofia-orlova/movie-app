@@ -1,7 +1,9 @@
 <template>
   <div>
     <main-header />
-    <nuxt />
+    <div class="main-layout-container">
+      <nuxt />
+    </div>
     <main-footer />
   </div>
 </template>
@@ -16,4 +18,9 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/main";
+.main-layout-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+}
 </style>

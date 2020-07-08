@@ -2,24 +2,24 @@
   <div>
     <div class="switcher">
       <h2 class="switcher__label">
-        В тренде
+        Что популярно
       </h2>
       <div class="switcher__button-wrapper">
         <el-button
           round
           size="mini"
           class="switcher__button-item"
-          @click="switchToDailyTrends"
+          @click="switchToPopularMovies"
         >
-          Сегодня
+          Фильмы
         </el-button>
         <el-button
           round
           size="mini"
           class="switcher__button-item"
-          @click="switchToWeeklyTrends"
+          @click="switchToPopularTv"
         >
-          На этой неделе
+          Сериалы
         </el-button>
       </div>
     </div>
@@ -31,35 +31,35 @@
 import { mapActions, mapGetters } from 'vuex'
 import Carousel from './Carousel'
 export default {
-  name: 'TrendsCarousel',
+  name: 'PopularsCarousel',
   components: {
     Carousel
   },
   async fetch () {
     this.$store.commit('carousels/SET_LOADING', true)
-    await this.$store.dispatch('carousels/getDailyTrends')
+    await this.$store.dispatch('carousels/getPopularMovies')
     this.$store.commit('carousels/SET_LOADING', false)
   },
   computed: {
     ...mapGetters('carousels',
       {
-        trends: 'mapTrends'
+        trends: 'mapPopulars'
       }
     )
   },
   methods: {
     ...mapActions('carousels', [
-      'getDailyTrends',
-      'getWeeklyTrends'
+      'getPopularMovies',
+      'getPopularTv'
     ]),
-    async switchToDailyTrends () {
+    async switchToPopularMovies () {
       this.$store.commit('carousels/SET_LOADING', true)
-      await this.getDailyTrends()
+      await this.getPopularMovies()
       this.$store.commit('carousels/SET_LOADING', false)
     },
-    async switchToWeeklyTrends () {
+    async switchToPopularTv () {
       this.$store.commit('carousels/SET_LOADING', true)
-      await this.getWeeklyTrends()
+      await this.getPopularTv()
       this.$store.commit('carousels/SET_LOADING', false)
     }
   }

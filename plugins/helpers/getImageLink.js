@@ -1,6 +1,6 @@
 export default function getImageLink (imageSize, imagePath) {
   const imageSizes = {
-    small: '',
+    small: 'w220',
     medium: 'w500',
     large: ''
   }

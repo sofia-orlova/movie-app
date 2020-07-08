@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <populars-carousel />
       <trends-carousel />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '../components/common/Logo.vue'
 import TrendsCarousel from '../components/TrendsCarousel'
+import PopularsCarousel from '../components/PopularsCarousel'
 
 export default {
   name: 'HomePage',
   components: {
-    Logo,
-    TrendsCarousel
+    TrendsCarousel,
+    PopularsCarousel
   },
   layout: 'main'
 }

@@ -1,0 +1,18 @@
+.switcher{
+  display: flex;
+  align-items: baseline;
+  padding: 15px 0;
+  &__label{
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+}
+@media all and (max-width: 416px){
+  .switcher {
+    display: block;
+    &__label{
+      padding-bottom: 10px;
+    }
+  }
+}
