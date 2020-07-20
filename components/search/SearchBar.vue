@@ -12,7 +12,7 @@
         <el-form-item class="search-form__submit">
           <el-button
             type="submit"
-            class="search-button"
+            class="search-form__button"
             @click="submitSearch"
           >
             Search
@@ -34,7 +34,7 @@ export default {
   methods: {
     submitSearch () {
       this.$router.replace({
-        name: 'search-result',
+        path: 'search-result',
         query: { search: this.searchQuery }
       })
     }
@@ -43,39 +43,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flex {
-  display: flex;
-}
-.search-form__wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  position: relative;
-  .search-button {
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(to right, #90cea1, #01b4e4);
-    color: #ffffff;
-    font-weight: 700;
-    margin-left: -30px;
-    &:hover {
-      color: #000000;
+@import "../../assets/scss/main";
+.search-form {
+  .search-form__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    .search-form__input {
+      width: 100%;
+      padding-right: 50px;
+    }
+    .search-form__submit {
+      position: absolute;
+      right: 0;
+      .search-form__button {
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(to right, $tertiary-color, $secondary-color);
+        color: $white;
+        font-weight: 700;
+        margin-left: -30px;
+        &:hover {
+          color: $black;
+        }
+      }
     }
   }
-  .search-form__input {
-    width: 100%;
-    padding-right: 50px;
-  }
-  .search-form__submit {
-    position: absolute;
-    right: 0;
-  }
-}
-
   /deep/ {
     .el-input__inner {
       height: 38px;
       border-radius: 30px;
     }
   }
+}
 </style>

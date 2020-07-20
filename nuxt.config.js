@@ -53,8 +53,14 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-i18n',
+    'nuxt-svg-loader'
   ],
+  i18n: {
+    locales: ['ru'],
+    defaultLocale: 'ru'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

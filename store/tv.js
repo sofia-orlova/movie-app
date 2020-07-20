@@ -5,8 +5,10 @@ import getImageLink from '../plugins/helpers/getImageLink'
 Vue.use(Vuex)
 
 export default {
-  state: {
-    tv: {}
+  state () {
+    return {
+      tv: {}
+    }
   },
   getters: {
     setTv ({ tv }) {

@@ -4,17 +4,22 @@ import getImageLink from '../plugins/helpers/getImageLink'
 
 Vue.use(Vuex)
 export default {
-  state: {
-    searchPhrase: '',
-    searchResult: {
-      page: 1,
-      results: [],
-      total_pages: 1,
-      total_results: 0
+  state () {
+    return {
+      searchPhrase: '',
+      searchResult: {
+        page: 1,
+        results: [],
+        total_pages: 1,
+        total_results: 0
+      },
+      filter: {
+        criterion: ''
+      }
     }
   },
   getters: {
-    getSearchResult ({ searchResult }) {
+    setSearchResult ({ searchResult }) {
       return searchResult.results.map((item) => {
         const actorWorkList = item.known_for ? item.known_for.map((el) => {
           return el.name || el.title
@@ -45,11 +50,59 @@ export default {
     },
     SET_PAGE (state, page) {
       state.searchResult.page = page
+    },
+    SET_FILTER_CRITERIA ({ filter }, criteria) {
+      Vue.set(filter, 'criterion', criteria)
     }
   },
   actions: {
-    async getSearchResults ({ commit, state }) {
-      const result = await this.$axios.get('/search/multi', {
+    async getSearchByMovies ({ commit, state }) {
+      const result = await this.$axios.get('/search/movie', {
+        params: {
+          query: state.searchPhrase,
+          page: state.searchResult.page
+        }
+      })
+      commit('SET_SEARCH_RESULT', result.data)
+    },
+    async getSearchByTvShows ({ commit, state }) {
+      const result = await this.$axios.get('/search/tv', {
+        params: {
+          query: state.searchPhrase,
+          page: state.searchResult.page
+        }
+      })
+      commit('SET_SEARCH_RESULT', result.data)
+    },
+    async getSearchByPeople ({ commit, state }) {
+      const result = await this.$axios.get('/search/person', {
+        params: {
+          query: state.searchPhrase,
+          page: state.searchResult.page
+        }
+      })
+      commit('SET_SEARCH_RESULT', result.data)
+    },
+    async getSearchByKeyWords ({ commit, state }) {
+      const result = await this.$axios.get('/search/keyword', {
+        params: {
+          query: state.searchPhrase,
+          page: state.searchResult.page
+        }
+      })
+      commit('SET_SEARCH_RESULT', result.data)
+    },
+    async getSearchByCollections ({ commit, state }) {
+      const result = await this.$axios.get('/search/collection', {
+        params: {
+          query: state.searchPhrase,
+          page: state.searchResult.page
+        }
+      })
+      commit('SET_SEARCH_RESULT', result.data)
+    },
+    async getSearchByCompanies ({ commit, state }) {
+      const result = await this.$axios.get('/search/company', {
         params: {
           query: state.searchPhrase,
           page: state.searchResult.page

@@ -8,11 +8,11 @@
   </div>
 </template>
 <script>
-import SearchBar from '../components/SearchBar'
+import SearchBar from '../components/search/SearchBar'
 export default {
   name: 'HomePage',
   components: { SearchBar },
-  layout: 'default'
+  layout: 'main'
 }
 </script>
 <style lang="scss">

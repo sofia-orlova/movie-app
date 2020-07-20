@@ -4,8 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default {
-  state: {
-    loading: false
+  state () {
+    return {
+      loading: false
+    }
   },
   mutations: {
     CHANGE_PRELOADER_STATUS (state, boolean) {
