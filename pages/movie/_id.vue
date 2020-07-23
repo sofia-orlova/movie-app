@@ -5,8 +5,12 @@
         <el-col :span="6">
           <el-image :src="movie.imageLink" class="movie-page__poster-image" />
         </el-col>
-        <el-col :span="18">
+        <el-col :span="18" class="movie-page__movie-title">
           {{ movie.title }}
+          <span>
+            ({{ movie.releaseYear }})
+          </span>
+          <p>{{ movie.releaseDate }} <span>{{ movie.movieGenres}} </span></p>
         </el-col>
       </el-row>
     </div>
@@ -39,17 +43,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "assets/scss/main";
 .movie-page {
   position: relative;
 
   .movie-page__profile-wrapper {
     position: relative;
-    height: 450px;
+    max-height: 450px;
     background-repeat: no-repeat;
     background-size: cover;
     &:before {
       content: '';
-      background: rgba(13, 37, 63, 0.8);
+      background: rgba($primary-color, 0.8);
       height: 100%;
       width: 100%;
       position: absolute;
@@ -63,10 +68,23 @@ export default {
       position: absolute;
     }
     .movie-page__poster-image {
-      max-width: 200px;
+      border-radius: 10px;
+      margin: 0 5px;
     }
     .bg-inner {
       padding: 15px 5px;
+    }
+    .movie-page__movie-title {
+      color: $white;
+      font-size: 24px;
+      font-weight: 700;
+      > span {
+        font-weight: 400;
+        color: rgba($white, 0.7);
+      }
+      &:before {
+        content: '\AE';
+      }
     }
   }
 }

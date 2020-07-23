@@ -12,8 +12,13 @@ export default {
   },
   getters: {
     setMovie ({ movie }) {
+      movie.movieGenres = movie.genres.map((el) => {
+        return el.name
+      }).join(', ')
       movie.imageLink = getImageLink('medium', movie.poster_path || movie.profile_path)
       movie.backgroungImage = getImageLink('medium', movie.backdrop_path)
+      movie.releaseYear = new Date(movie.release_date).getFullYear()
+      movie.releaseDate = movie.release_date || movie.first_air_date
       return movie
     }
   },

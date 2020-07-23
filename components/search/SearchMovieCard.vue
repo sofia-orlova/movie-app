@@ -1,6 +1,5 @@
 <template>
   <div class="search-card">
-    {{ getShowType() }}
     <nuxt-link :to="localePath({ name: getShowType(), params: { id: searchItem.id }})">
       <div class="search-card__wrapper">
         <div class="search-card__image">
