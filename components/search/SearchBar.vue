@@ -32,11 +32,13 @@ export default {
     }
   },
   methods: {
-    submitSearch () {
-      this.$router.replace({
+    async submitSearch () {
+      this.$router.push({
         path: 'search-result',
         query: { search: this.searchQuery }
       })
+      await await this.$store.commit('search/SET_SEARCH_PHRASE', this.searchQuery)
+      await this.$store.dispatch('search/getSearchByMovies')
     }
   }
 }

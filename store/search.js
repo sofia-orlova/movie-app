@@ -51,8 +51,8 @@ export default {
     SET_PAGE (state, page) {
       state.searchResult.page = page
     },
-    SET_FILTER_CRITERIA ({ filter }, criteria) {
-      Vue.set(filter, 'criterion', criteria)
+    SET_FILTER_CRITERIA (state, criteria) {
+      state.filter.criterion = criteria
     }
   },
   actions: {

@@ -1,37 +1,40 @@
 <template>
-  <div class="search-result">
-    <el-row v-if="searchData.length">
-      <el-col
-        :lg="6"
-        :md="6"
-        :sm="24"
-      >
-        <search-filter @changeFilter="changeFilter" />
-      </el-col>
-      <el-col
-        :lg="18"
-        :md="18"
-        :sm="24"
-      >
-        <search-movie-card
-          v-for="(searchItem, index) in searchData"
-          :key="index"
-          :search-item="searchItem"
-          :filter-criteria="filterCriteria"
-        />
-      </el-col>
-      <el-col :span="24">
-        <el-pagination
-          class="search-result__pagination"
-          layout="prev, pager, next"
-          :page-count="pagination.totalPages"
-          :current-page="pagination.page"
-          @current-change="changePage"
-        />
-      </el-col>
-    </el-row>
-    <div v-else>
-      <h2>По вашему запросу ничего не найдено</h2>
+  <div>
+    <search-bar class="bla" />
+    <div class="search-result">
+      <el-row v-if="searchData.length">
+        <el-col
+          :lg="6"
+          :md="6"
+          :sm="24"
+        >
+          <search-filter @changeFilter="changeFilter" />
+        </el-col>
+        <el-col
+          :lg="18"
+          :md="18"
+          :sm="24"
+        >
+          <search-movie-card
+            v-for="(searchItem, index) in searchData"
+            :key="index"
+            :search-item="searchItem"
+            :filter-criteria="filterCriteria"
+          />
+        </el-col>
+        <el-col :span="24">
+          <el-pagination
+            class="search-result__pagination"
+            layout="prev, pager, next"
+            :page-count="pagination.totalPages"
+            :current-page="pagination.page"
+            @current-change="changePage"
+          />
+        </el-col>
+      </el-row>
+      <div v-else>
+        <h2>По вашему запросу ничего не найдено</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -40,10 +43,11 @@
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import SearchMovieCard from '../components/search/SearchMovieCard'
 import SearchFilter from '../components/search/SearchFilter'
+import SearchBar from '../components/search/SearchBar'
 export default {
   name: 'SearchResult',
   layout: 'main',
-  components: { SearchMovieCard, SearchFilter },
+  components: { SearchMovieCard, SearchFilter, SearchBar },
   async fetch () {
     const searchPhrase = new URLSearchParams(window.location.search).get('search')
     this.$preloader.startPreloader()
@@ -117,11 +121,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .search-result {
-    padding: 20px;
-    .search-result__pagination {
-      text-align: center;
-      margin-top: 10px;
+.search-result {
+  padding: 20px;
+  .search-result__pagination {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .bla{
+    /deep/ {
+      .search-form__wrapper {
+        .search-form__submit {
+          .search-form__button {
+            display: none;
+          }
+        }
+      }
     }
   }
+}
 </style>
