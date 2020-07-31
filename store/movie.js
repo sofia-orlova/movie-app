@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import getImageLink from '../plugins/helpers/getImageLink'
+import getVideoImage from '../plugins/helpers/getVideoImage'
+import getVideoLink from '../plugins/helpers/getVideoLink'
 
 Vue.use(Vuex)
 
@@ -12,11 +14,16 @@ export default {
         id: 0,
         keywords: []
       },
-      similarMovies: {
+      recommendations: {
         page: 1,
         results: [],
         total_pages: 1,
         total_results: 0
+      },
+      movieImages: {},
+      movieVideos: {
+        id: 0,
+        results: []
       }
     }
   },
@@ -34,8 +41,27 @@ export default {
       movie.releaseDate = movie.release_date || movie.first_air_date
       movie.movieBudget = new Intl.NumberFormat('en-EN').format(movie.budget)
       movie.movieRevenue = new Intl.NumberFormat('en-EN').format(movie.revenue)
-      movie.collectionBackground = getImageLink('medium', movie.belongs_to_collection.poster_path)
+      movie.collectionBackground = movie.belongs_to_collection ? getImageLink('medium', movie.belongs_to_collection.poster_path) : null
       return movie
+    },
+    setMovieRecommendations ({ recommendations }) {
+      return recommendations.results.map((item) => {
+        item.imageLink = getImageLink('medium', item.poster_path || item.profile_path)
+        return item
+      })
+    },
+    setMovieImages ({ movieImages }) {
+      return movieImages.posters.map((item) => {
+        item.imageLink = getImageLink('medium', item.file_path)
+        return item
+      })
+    },
+    setMovieVideos ({ movieVideos }) {
+      return movieVideos.results.map((item) => {
+        item.videoImage = getVideoImage(item.key)
+        item.videoLink = getVideoLink(item.key)
+        return item
+      })
     }
   },
   mutations: {
@@ -45,8 +71,14 @@ export default {
     SET_MOVIE_KEYWORDS (state, keywordsResponse) {
       state.movieKeywords = keywordsResponse
     },
-    SET_SIMILAR_MOVIES (state, similarMoviesResponse) {
-      state.similarMovies = similarMoviesResponse
+    SET_MOVIE_RECOMMENDATIONS (state, MovieRecommendationsResponse) {
+      state.recommendations = MovieRecommendationsResponse
+    },
+    SET_MOVIE_IMAGES (state, MovieImagesResponse) {
+      state.movieImages = MovieImagesResponse
+    },
+    SET_MOVIE_VIDEOS (state, MovieVideosResponse) {
+      state.movieVideos = MovieVideosResponse
     }
   },
   actions: {
@@ -58,9 +90,17 @@ export default {
       const result = await this.$axios.get(`/movie/${id}/keywords`)
       commit('SET_MOVIE_KEYWORDS', result.data)
     },
-    async getSimilarMovies ({ commit, state }, { id }) {
-      const result = await this.$axios.get(`/movie/${id}/similar`)
-      commit('SET_SIMILAR_MOVIES', result.data)
+    async getMovieRecommendations ({ commit, state }, { id }) {
+      const result = await this.$axios.get(`/movie/${id}/recommendations`)
+      commit('SET_MOVIE_RECOMMENDATIONS', result.data)
+    },
+    async getMovieImages ({ commit, state }, { id }) {
+      const result = await this.$axios.get(`/movie/${id}/images`)
+      commit('SET_MOVIE_IMAGES', result.data)
+    },
+    async getMovieVideos ({ commit, state }, { id }) {
+      const result = await this.$axios.get(`/movie/${id}/videos`)
+      commit('SET_MOVIE_VIDEOS', result.data)
     }
   }
 }

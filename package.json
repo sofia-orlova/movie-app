@@ -17,7 +17,9 @@
     "element-ui": "^2.4.11",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.13.1",
-    "nuxt-svg-loader": "^1.2.0"
+    "nuxt-svg-loader": "^1.2.0",
+    "swiper": "^5.4.5",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

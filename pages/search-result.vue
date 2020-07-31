@@ -1,6 +1,6 @@
 <template>
   <div>
-    <search-bar class="bla" />
+    <search-bar />
     <div class="search-result">
       <el-row v-if="searchData.length">
         <el-col
@@ -127,14 +127,21 @@ export default {
     text-align: center;
     margin-top: 10px;
   }
-  .bla{
+}
+/deep/ {
+  .search-form__wrapper {
+    .search-form__input {
+      padding-right: 0 !important;
+    }
+    .search-form__submit {
+      display: none;
+    }
     /deep/ {
-      .search-form__wrapper {
-        .search-form__submit {
-          .search-form__button {
-            display: none;
-          }
-        }
+      .el-input__inner {
+      border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
       }
     }
   }
