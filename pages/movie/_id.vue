@@ -4,12 +4,16 @@
       :movie="movie"
       :movie-page-profile-titles="moviePageProfileTitles"
     />
-    <el-row :gutter="20">
+    <el-row :gutter="20" class="movie-page__info-wrapper">
       <el-col :lg="17" :md="17" :sm="17" :xs="24">
         <movie-page-media
           :movie-page-overview-titles="moviePageOverviewTitles"
           :movie-images="movieImages"
-          :movie-videos="MovieVideos"
+          :movie-videos="movieVideos"
+        />
+        <movie-page-reviews
+          :movie-reviews="movieReviews"
+          :movie-page-overview-titles="moviePageOverviewTitles"
         />
         <movie-page-collection-banner
           :movie="movie"
@@ -38,22 +42,26 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-import MoviePageCarousel from '../../components/movie-page/carousel'
+import MoviePageCarousel from '../../components/movie-page/MoviePageCarousel'
 import MoviePageSideBar from '../../components/movie-page/moviePageSideBar'
-import MoviePageProfile from '../../components/movie-page/moviePageProfile'
-import MoviePageCollectionBanner from '../../components/movie-page/moviePageCollectionBanner'
-import MoviePageMedia from '../../components/movie-page/moviePageMedia'
+import MoviePageProfile from '../../components/movie-page/MoviePageProfile'
+import MoviePageCollectionBanner from '../../components/movie-page/MoviePageCollectionBanner'
+import MoviePageMedia from '../../components/movie-page/MoviePageMedia'
+import MoviePageReviews from '@/components/movie-page/MoviePageReviews'
 export default {
   name: 'MoviePage',
   layout: 'main',
-  components: { MoviePageMedia, MoviePageCollectionBanner, MoviePageCarousel, MoviePageSideBar, MoviePageProfile },
+  components: { MoviePageReviews, MoviePageMedia, MoviePageCollectionBanner, MoviePageCarousel, MoviePageSideBar, MoviePageProfile },
   async fetch ({ route, store }) {
+    // this.$preloader.startPreloader()
     const id = route.params.id
     await store.dispatch('movie/getMovie', { id })
     await store.dispatch('movie/getMovieKeywords', { id })
     await store.dispatch('movie/getMovieRecommendations', { id })
     await store.dispatch('movie/getMovieImages', { id })
     await store.dispatch('movie/getMovieVideos', { id })
+    await store.dispatch('movie/getMovieReviews', { id })
+    await console.log(this)
   },
   data () {
     return {
@@ -70,7 +78,13 @@ export default {
         partOfTheCollection: this.$t('moviePageOverviewTitles.partOfTheCollection'),
         viewTheCollection: this.$t('moviePageOverviewTitles.viewTheCollection'),
         recommendations: this.$t('moviePageOverviewTitles.recommendations'),
-        media: this.$t('moviePageOverviewTitles.media')
+        media: this.$t('moviePageOverviewTitles.media'),
+        video: this.$t('moviePageOverviewTitles.video'),
+        posters: this.$t('moviePageOverviewTitles.posters'),
+        notFound: this.$t('moviePageOverviewTitles.notFound'),
+        reviews: this.$t('moviePageOverviewTitles.reviews'),
+        readMore: this.$t('moviePageOverviewTitles.readMore'),
+        reviewFrom: this.$t('moviePageOverviewTitles.reviewFrom')
       }
     }
   },
@@ -79,10 +93,11 @@ export default {
       movie: 'setMovie',
       recommendations: 'setMovieRecommendations',
       movieImages: 'setMovieImages',
-      MovieVideos: 'setMovieVideos'
+      movieVideos: 'setMovieVideos'
     }),
     ...mapState('movie', {
-      keywords: state => state.movieKeywords.keywords
+      keywords: state => state.movieKeywords.keywords,
+      movieReviews: state => state.movieReviews.results
     }),
     ...mapState('preloader', {
       preloaderStatus: state => state.loading
@@ -104,7 +119,13 @@ export default {
           partOfTheCollection: 'Часть коллекции: ',
           viewTheCollection: 'Перейти в коллекцию',
           recommendations: 'Рекомендации',
-          media: 'Медиа'
+          media: 'Медиа',
+          video: 'Видео',
+          posters: 'Постеры',
+          notFound: 'Ничего не найдено',
+          reviews: 'Рецензии',
+          readMore: 'читать далее',
+          reviewFrom: 'Обзор от'
         }
       }
     }
@@ -116,5 +137,8 @@ export default {
 @import "assets/scss/main";
 .movie-page {
   position: relative;
+  .movie-page__info-wrapper {
+    padding: 15px 10px;
+  }
 }
 </style>

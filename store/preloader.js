@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default {
   state () {
     return {
-      loading: false
+      loading: true
     }
   },
   mutations: {

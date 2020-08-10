@@ -1,6 +1,7 @@
 <template>
   <div>
-    <search-bar />
+    <search-bar class="search-bar" />
+    <hr>
     <div class="search-result">
       <el-row v-if="searchData.length">
         <el-col
@@ -57,6 +58,7 @@ export default {
     }
     this.$preloader.stopPreloader()
     console.log(window.location.search)
+    console.log(this)
   },
   computed: {
     ...mapState('search', {
@@ -121,6 +123,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.search-bar {
+  max-width: 1140px;
+  margin: 0 auto;
+}
 .search-result {
   padding: 20px;
   .search-result__pagination {
@@ -139,9 +145,7 @@ export default {
     /deep/ {
       .el-input__inner {
       border-radius: 0;
-        border-left: none;
-        border-right: none;
-        border-top: none;
+      border: none;
       }
     }
   }

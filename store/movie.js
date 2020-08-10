@@ -24,6 +24,13 @@ export default {
       movieVideos: {
         id: 0,
         results: []
+      },
+      movieReviews: {
+        id: 0,
+        page: 1,
+        results: [],
+        total_pages: 1,
+        total_results: 0
       }
     }
   },
@@ -79,6 +86,9 @@ export default {
     },
     SET_MOVIE_VIDEOS (state, MovieVideosResponse) {
       state.movieVideos = MovieVideosResponse
+    },
+    SET_MOVIE_REVIEWS (state, MovieVideosResponse) {
+      state.movieReviews = MovieVideosResponse
     }
   },
   actions: {
@@ -101,6 +111,10 @@ export default {
     async getMovieVideos ({ commit, state }, { id }) {
       const result = await this.$axios.get(`/movie/${id}/videos`)
       commit('SET_MOVIE_VIDEOS', result.data)
+    },
+    async getMovieReviews ({ commit, state }, { id }) {
+      const result = await this.$axios.get(`/movie/${id}/reviews`)
+      commit('SET_MOVIE_REVIEWS', result.data)
     }
   }
 }

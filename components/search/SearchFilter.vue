@@ -12,9 +12,6 @@
       <div>
         {{ filterCriterion.label }}
       </div>
-      <div>
-        {{ filterCriterion.length }}
-      </div>
     </el-button>
   </div>
 </template>
