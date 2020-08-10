@@ -52,8 +52,7 @@ export default {
   name: 'MoviePage',
   layout: 'main',
   components: { MoviePageReviews, MoviePageMedia, MoviePageCollectionBanner, MoviePageCarousel, MoviePageSideBar, MoviePageProfile },
-  async fetch ({ route, store }) {
-    // this.$preloader.startPreloader()
+  async fetch ({ route, store, $preloader }) {
     const id = route.params.id
     await store.dispatch('movie/getMovie', { id })
     await store.dispatch('movie/getMovieKeywords', { id })
@@ -61,7 +60,6 @@ export default {
     await store.dispatch('movie/getMovieImages', { id })
     await store.dispatch('movie/getMovieVideos', { id })
     await store.dispatch('movie/getMovieReviews', { id })
-    await console.log(this)
   },
   data () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div class="preloder__wrapper">
+  <div class="preloder__wrapper" v-if="loading">
     <div class="preloder__container">
       <i class="el-icon-loading" />
       <p>Loaging...</p>
@@ -9,7 +9,18 @@
 
 <script>
 export default {
-  name: 'Preloader'
+  name: 'Preloader',
+  data: () => ({
+    loading: false
+  }),
+  methods: {
+    start () {
+      this.loading = true
+    },
+    finish () {
+      this.loading = false
+    }
+  }
 }
 </script>
 

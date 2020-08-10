@@ -6,21 +6,21 @@
         <el-carousel :autoplay="false">
           <div v-if="movieVideos.length">
             <el-carousel-item v-for="movieVideo in movieVideos" :key="movieVideo.id">
-              <div v-if="!videoPlay" class="movie-page-media__video-image-wrapper" @click="playVideo">
+              <div v-if="videoList[movieVideo.id]" class="movie-page-media__video-container">
+                <iframe
+                  width="100%"
+                  height="300"
+                  :src="movieVideo.videoLink + '?autoplay=1'"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+              <div v-else class="movie-page-media__video-image-wrapper" @click="playVideo(movieVideo.id)">
                 <div class="movie-page-media__video-button el-icon-caret-right" />
                 <el-image
                   :src="movieVideo.videoImage"
                   fit="cover"
-                />
-              </div>
-              <div v-if="videoPlay" class="movie-page-media__video-container">
-                <iframe
-                  width="100%"
-                  height="300"
-                  :src="movieVideo.videoLink"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
                 />
               </div>
             </el-carousel-item>
@@ -69,12 +69,18 @@ export default {
   },
   data () {
     return {
-      videoPlay: false
+      videoList: {}
     }
   },
+  created () {
+    this.videoList = this.movieVideos.reduce((accumulator, curEl) => {
+      accumulator[curEl.id] = false
+      return accumulator
+    }, {})
+  },
   methods: {
-    playVideo () {
-      this.videoPlay = !this.videoPlay
+    playVideo (videoId) {
+      this.videoList[videoId] = true
     }
   }
 }
