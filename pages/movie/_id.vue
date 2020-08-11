@@ -52,7 +52,7 @@ export default {
   name: 'MoviePage',
   layout: 'main',
   components: { MoviePageReviews, MoviePageMedia, MoviePageCollectionBanner, MoviePageCarousel, MoviePageSideBar, MoviePageProfile },
-  async fetch ({ route, store, $preloader }) {
+  async fetch ({ route, store }) {
     const id = route.params.id
     await store.dispatch('movie/getMovie', { id })
     await store.dispatch('movie/getMovieKeywords', { id })
@@ -96,9 +96,6 @@ export default {
     ...mapState('movie', {
       keywords: state => state.movieKeywords.keywords,
       movieReviews: state => state.movieReviews.results
-    }),
-    ...mapState('preloader', {
-      preloaderStatus: state => state.loading
     })
   },
   i18n: {

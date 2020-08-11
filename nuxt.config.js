@@ -23,7 +23,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: '~/components/Preloader.vue',
+  loading: '~/components/loading.vue',
   /*
   ** Global CSS
   */
@@ -36,8 +36,7 @@ export default {
   plugins: [
     '@/plugins/element-ui',
     '@plugins/axios',
-    '@plugins/helpers/getImageLink',
-    '@plugins/helpers/preloader'
+    '@plugins/helpers/getImageLink'
   ],
   /*
   ** Nuxt.js dev-modules

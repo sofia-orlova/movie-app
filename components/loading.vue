@@ -1,6 +1,6 @@
 <template>
-  <div class="preloder__wrapper" v-if="loading">
-    <div class="preloder__container">
+  <div class="preloder" v-if="loading">
+    <div class="preloder__wrapper">
       <i class="el-icon-loading" />
       <p>Loaging...</p>
     </div>
@@ -25,13 +25,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.preloder__wrapper {
+.preloder {
   position: fixed;
   width: 100%;
   height: 100%;
   background: #ffffff99;
   z-index: 9999;
-  .preloder__container {
+  .preloder__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;

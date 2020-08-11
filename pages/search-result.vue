@@ -51,12 +51,10 @@ export default {
   components: { SearchMovieCard, SearchFilter, SearchBar },
   async fetch () {
     const searchPhrase = new URLSearchParams(window.location.search).get('search')
-    this.$preloader.startPreloader()
     if (searchPhrase) {
       await this.$store.commit('search/SET_SEARCH_PHRASE', searchPhrase)
       await this.$store.dispatch('search/getSearchByMovies')
     }
-    this.$preloader.stopPreloader()
     console.log(window.location.search)
     console.log(this)
   },
@@ -64,9 +62,6 @@ export default {
     ...mapState('search', {
       searchPhraseQuery: state => state.searchQuery,
       filterCriteria: state => state.filter.criterion
-    }),
-    ...mapState('preloader', {
-      preloaderStatus: state => state.loading
     }),
     ...mapGetters('search',
       {
@@ -113,10 +108,8 @@ export default {
       }
     },
     async changePage (page) {
-      this.$preloader.startPreloader()
       await this.SET_PAGE(page)
       await this.getResult()
-      this.$preloader.stopPreloader()
     }
   }
 }
