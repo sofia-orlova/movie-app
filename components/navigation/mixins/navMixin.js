@@ -14,10 +14,22 @@ export default {
                 {
                   title: this.$t('menu.films.subMenu.popular'),
                   pageIndex: 'popular-films'
+                },
+                {
+                  title: this.$t('menu.films.subMenu.nowPlaying'),
+                  pageIndex: 'now-playing-films'
+                }
+              ]
+            },
+            {
+              title: this.$t('menu.people.title'),
+              subMenu: [
+                {
+                  title: this.$t('menu.people.subMenu.popular'),
+                  pageIndex: 'popular-people'
                 }
               ]
             }
-
           ]
         },
         rightNavigation: {
@@ -80,6 +92,13 @@ export default {
           },
           films: {
             title: 'Фильмы',
+            subMenu: {
+              popular: 'Популярные',
+              nowPlaying: 'Смотрят сейчас'
+            }
+          },
+          people: {
+            title: 'Люди',
             subMenu: {
               popular: 'Популярные'
             }

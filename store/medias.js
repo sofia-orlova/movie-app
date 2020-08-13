@@ -19,10 +19,14 @@ export default {
   getters: {
     mapPopulars ({ populars }) {
       return populars.results.map((item) => {
+        const actorWorkList = item.known_for ? item.known_for.map((el) => {
+          return el.name || el.title
+        }).join(', ') : ''
         item.imageLink = getImageLink('medium', item.poster_path || item.profile_path)
         item.name = item.name || item.title
         item.releaseDate = item.release_date || item.first_air_date
         item.rating = item.vote_average * 10
+        item.content = actorWorkList || item.overview
         return item
       })
     }
@@ -41,8 +45,18 @@ export default {
       })
       commit('SET_POPULARS', result.data)
     },
+    async getNowPlayingMovies ({ commit }) {
+      const result = await this.$axios.get('/movie/now_playing', {
+      })
+      commit('SET_POPULARS', result.data)
+    },
     async getPopularTv ({ commit }) {
       const result = await this.$axios.get('/tv/popular', {
+      })
+      commit('SET_POPULARS', result.data)
+    },
+    async getPopularPeople ({ commit }) {
+      const result = await this.$axios.get('/person/popular', {
       })
       commit('SET_POPULARS', result.data)
     }

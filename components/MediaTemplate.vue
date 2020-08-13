@@ -9,6 +9,7 @@
         <img :src="mediaItem.imageLink" class="media__item-image">
         <div class="media__item-content">
           <el-progress
+            v-if="mediaItem.rating"
             class="swiper__progress-circle"
             type="circle"
             :percentage="mediaItem.rating"
@@ -16,10 +17,10 @@
             :stroke-width="2"
             :color="progressBarColor(mediaItem.rating)"
           />
-          <p class="swiper__movie-title">
+          <p class="media__item-title">
             {{ mediaItem.name }}
           </p>
-          <p class="swiper__release-date">
+          <p class="media__item-release-date">
             {{ mediaItem.releaseDate }}
           </p>
         </div>
@@ -63,9 +64,11 @@ export default {
     width: 25%;
     padding: 10px;
     .media__item-container {
-      border: 1px solid black;
+      border: 1px solid $shadow;
+      box-shadow: 0 0 14px 2px $shadow;;
       border-radius: 10px;
       overflow: hidden;
+      height: 100%;
       .media__item-image {
         width: 100%;
         max-height: 300px;
@@ -92,6 +95,13 @@ export default {
               display: none;
             }
           }
+        }
+        .media__item-title {
+          font-weight: 700;
+          padding: 5px 0;
+        }
+        .media__item-release-date {
+          color: $grey;
         }
       }
     }

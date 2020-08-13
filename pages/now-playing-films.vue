@@ -6,7 +6,7 @@
         bla bla bla
       </el-col>
       <el-col :span="17">
-        <media-template :media-items="popularMovies"/>
+        <media-template :media-items="NowPlayingMovies" />
       </el-col>
     </el-row>
   </div>
@@ -19,12 +19,12 @@ export default {
   components: { MediaTemplate },
   layout: 'main',
   async fetch () {
-    await this.$store.dispatch('medias/getPopularMovies')
+    await this.$store.dispatch('medias/getNowPlayingMovies')
   },
   computed: {
     ...mapGetters('medias',
       {
-        popularMovies: 'mapPopulars'
+        NowPlayingMovies: 'mapPopulars'
       }
     )
   }
