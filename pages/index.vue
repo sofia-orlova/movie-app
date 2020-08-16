@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="welcome">
+  <div class="welcome">
+    <el-row>
       <h1>Добро пожаловать.</h1>
       <p>Миллионы фильмов, сериалов и людей. Исследуйте сейчас.</p>
       <search-bar />
-    </div>
+    </el-row>
   </div>
 </template>
 <script>
