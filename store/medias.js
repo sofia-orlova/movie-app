@@ -13,7 +13,13 @@ export default {
         total_pages: 1,
         total_results: 0
       },
-      loading: false
+      loading: false,
+      slots: {
+        page: 1,
+        results: [],
+        total_pages: 1,
+        total_results: 0
+      }
     }
   },
   getters: {
@@ -29,6 +35,14 @@ export default {
         item.content = actorWorkList || item.overview
         return item
       })
+    },
+    breackSlots ({ slots }) {
+      const array = slots.results
+      const size = 3
+      const subarray = []
+      for (let i = 0; i < Math.ceil(array.length / size); i++) {
+        subarray[i] = array.slice((i * size), (i * size) + size)
+      }
     }
   },
   mutations: {

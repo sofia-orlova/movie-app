@@ -6,8 +6,15 @@
         bla bla bla
       </el-col>
       <el-col :span="17">
-        <media-template :media-items="popularMovies"/>
+        <media-template :media-items="popularMovies" />
       </el-col>
+    </el-row>
+    <el-row>
+      <media-template
+        v-for="(partOfSlots, key) in breakedSlots"
+        :key="key"
+        :media-items="partOfSlots"
+      />
     </el-row>
   </div>
 </template>
@@ -24,7 +31,8 @@ export default {
   computed: {
     ...mapGetters('medias',
       {
-        popularMovies: 'mapPopulars'
+        popularMovies: 'mapPopulars',
+        breakedSlots: 'breakedSlots'
       }
     )
   }
