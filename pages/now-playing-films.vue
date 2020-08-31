@@ -3,7 +3,7 @@
     <h1>Popular films are here</h1>
     <el-row>
       <el-col :span="7">
-        bla bla bla
+        bla bla bla-bla
       </el-col>
       <el-col :span="17">
         <media-template :media-items="NowPlayingMovies" />
