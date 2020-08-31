@@ -122,6 +122,7 @@ export default {
   /*height: 300px;*/
   width: 100%;
   margin-bottom: 20px;
+  padding: 0 20px;
   /deep/ {
     .swiper-wrapper {
       margin-bottom: 10px;
