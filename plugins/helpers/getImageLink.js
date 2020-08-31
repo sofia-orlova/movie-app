@@ -2,7 +2,7 @@ export default function getImageLink (imageSize, imagePath) {
   const imageSizes = {
     small: 'w220',
     medium: 'w500',
-    large: ''
+    large: '' // TODO add large size
   }
   if (imagePath == null) {
     return 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-4ee37443c461fff5bc221b43ae018a5dae317469c8e2479a87d562537dd45fdc.svg'
