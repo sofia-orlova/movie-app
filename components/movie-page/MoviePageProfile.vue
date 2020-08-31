@@ -62,76 +62,76 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @import "assets/scss/main";
-    .movie-page__profile-wrapper {
-        color: $white;
-        position: relative;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 20px 10px;
-        font-size: 15px;
-        &:before {
-            content: '';
-            background: rgba($primary-color, 0.8);
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        .movie-page__poster-image {
-            border-radius: 10px;
-        }
-        .movie-page__overview-wrapper {
-            .movie-page__movie-title {
-                font-size: 24px;
-                font-weight: 700;
-                > span {
-                    font-weight: 400;
-                    color: rgba($white, 0.7);
-                }
-            }
-            .movie-page__quick-info {
-                display: flex;
-                font-weight: 400;
-                padding: 10px 0;
-                .movie-page__release {
-                    list-style: none;
-                    padding-left: 0;
-                    &:before {
-                        content: '\AE';
-                    }
-                }
-                > li {
-                    list-style: inside;
-                    padding: 0 5px;
-                }
-            }
-            .movie-page__tagline {
-                font-style: italic;
-                padding-bottom: 15px;
-            }
-        }
+@import "assets/scss/main";
+.movie-page__profile-wrapper {
+  color: $white;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 10px;
+  font-size: 15px;
+    &:before {
+      content: '';
+      background: rgba($primary-color, 0.8);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
-    @media all and (max-width: 640px){
-      .movie-page__poster-wrapper {
-        width: 100%;
-      }
+    .movie-page__poster-image {
+      border-radius: 10px;
+    }
+    .movie-page__overview-wrapper {
+      .movie-page__movie-title {
+        font-size: 24px;
+        font-weight: 700;
+          > span {
+            font-weight: 400;
+            color: rgba($white, 0.7);
+          }
+        }
+        .movie-page__quick-info {
+          display: flex;
+          font-weight: 400;
+          padding: 10px 0;
+            .movie-page__release {
+              list-style: none;
+              padding-left: 0;
+                &:before {
+                  content: '\AE';
+                }
+            }
+            > li {
+              list-style: inside;
+              padding: 0 5px;
+            }
+        }
+        .movie-page__tagline {
+          font-style: italic;
+          padding-bottom: 15px;
+    }
+  }
+}
+@media all and (max-width: 640px){
+  .movie-page__poster-wrapper {
+    width: 100%;
+  }
 
-      .movie-page__overview-wrapper {
-        width: 100%;
-        padding: 0;
-      }
-      .movie-page__quick-info {
-        display: block !important;
-      }
-    }
-    @media all and (min-width: 450px) and (max-width: 640px){
-      .movie-page__poster-image {
-        max-height: 350px;
-      }
-      .movie-page__overview-wrapper {
-        width: 100%;
-      }
-    }
+  .movie-page__overview-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+  .movie-page__quick-info {
+    display: block !important;
+  }
+}
+ @media all and (min-width: 450px) and (max-width: 640px){
+   .movie-page__poster-image {
+      max-height: 350px;
+   }
+   .movie-page__overview-wrapper {
+     width: 100%;
+   }
+ }
 </style>

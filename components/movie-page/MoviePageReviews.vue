@@ -8,7 +8,7 @@
         </h4>
         <p class="movie-page-review__review-content">
           {{ movieReview.content }}<span>
-            <a href="/">{{ moviePageOverviewTitles.readMore }}</a>
+            <a href="#">{{ moviePageOverviewTitles.readMore }}</a>
           </span>
         </p>
       </div>

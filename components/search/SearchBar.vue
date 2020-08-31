@@ -6,7 +6,7 @@
           <el-input
             v-model="searchQuery"
             type="text"
-            placeholder="Найти фильм, сериал, персону..."
+            :placeholder="$t('searchBar.searchPlaceholder')"
           />
         </el-form-item>
         <el-form-item class="search-form__submit">
@@ -15,7 +15,7 @@
             class="search-form__button"
             @click="submitSearch"
           >
-            {{ this.$t('searchBar.searchButton') }}
+            {{ $t('searchBar.searchButton') }}
           </el-button>
         </el-form-item>
       </div>
@@ -45,7 +45,8 @@ export default {
     messages: {
       ru: {
         searchBar: {
-          searchButton: 'Search'
+          searchButton: 'Найти',
+          searchPlaceholder: 'Найти фильм, сериал, персону...'
         }
       }
     }

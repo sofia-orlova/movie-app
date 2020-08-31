@@ -3,10 +3,10 @@
     <div class="homepage__banner">
       <el-row>
         <h1 class="homepage__welcome">
-          {{ this.$t('homePage.welcome') }}
+          {{ $t('homePage.welcome') }}
         </h1>
         <p class="homepage__tagline">
-          {{ this.$t('homePage.tagline') }}
+          {{ $t('homePage.tagline') }}
         </p>
         <search-bar />
       </el-row>
@@ -32,10 +32,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "assets/scss/main";
 .homepage {
   .homepage__banner {
-    background: #0169dc;
-    color: #ffffff;
+    background: rgba($primary-color, .7);
+    color: $white;
     padding: 50px 20px 50px 20px;
     .homepage__welcome {
       font-size: 45px;

@@ -96,7 +96,6 @@ export default {
   }
   .movie-page-media__video-image-wrapper {
     position: relative;
-    //max-height: 320px;
     height: 100%;
     .movie-page-media__video-button {
       position: absolute;

@@ -122,19 +122,19 @@ export default {
         border-radius: 10px;
       }
     }
-  .swiper__content {
-    padding-left: 10px;
-  }
-  .swiper-pagination {
-    position: initial;
-  }
-  .swiper-button-prev, .swiper-button-next {
-    bottom: -15px;
-    top: unset;
-  }
-  .swiper-button-prev:after, .swiper-button-next:after {
-    font-size: 14px;
-  }
+    .swiper__content {
+      padding-left: 10px;
+    }
+    .swiper-pagination {
+      position: initial;
+    }
+    .swiper-button-prev, .swiper-button-next {
+      bottom: -15px;
+      top: unset;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 14px;
+    }
   }
 }
 </style>

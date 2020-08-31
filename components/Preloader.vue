@@ -2,7 +2,7 @@
   <div v-if="loading" class="preloder">
     <div class="preloder__wrapper">
       <i class="el-icon-loading" />
-      <p>{{ this.$t('preloader.status') }}</p>
+      <p>{{ $t('preloader.status') }}</p>
     </div>
   </div>
 </template>

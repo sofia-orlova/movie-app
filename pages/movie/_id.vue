@@ -43,7 +43,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import MoviePageCarousel from '../../components/movie-page/MoviePageCarousel'
-import MoviePageSideBar from '../../components/movie-page/moviePageSideBar'
+import MoviePageSideBar from '../../components/movie-page/MoviePageSideBar'
 import MoviePageProfile from '../../components/movie-page/MoviePageProfile'
 import MoviePageCollectionBanner from '../../components/movie-page/MoviePageCollectionBanner'
 import MoviePageMedia from '../../components/movie-page/MoviePageMedia'
