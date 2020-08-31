@@ -2,7 +2,7 @@
   <div>
     <div class="switcher">
       <h2 class="switcher__label">
-        В тренде
+        {{ $t('TrendsCarousel.InTrend') }}
       </h2>
       <div class="switcher__button-wrapper">
         <el-button
@@ -11,7 +11,7 @@
           class="switcher__button-item"
           @click="switchToDailyTrends"
         >
-          Сегодня
+          {{ $t('TrendsCarousel.today') }}
         </el-button>
         <el-button
           round
@@ -19,7 +19,7 @@
           class="switcher__button-item"
           @click="switchToWeeklyTrends"
         >
-          На этой неделе
+          {{ $t('TrendsCarousel.thisWeek') }}
         </el-button>
       </div>
     </div>
