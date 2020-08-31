@@ -15,11 +15,11 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "element-ui": "^2.4.11",
-    "node-sass": "^4.14.0",
     "nuxt": "^2.0.0",
-    "nuxt-i18n": "^6.11.0",
+    "nuxt-i18n": "^6.13.1",
     "nuxt-svg-loader": "^1.2.0",
-    "sass-loader": "^8.0.2"
+    "swiper": "^5.4.5",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
@@ -28,6 +28,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "stylelint": "^10.1.0"
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.6.1"
   }
 }

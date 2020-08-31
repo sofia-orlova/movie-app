@@ -14,9 +14,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .main-footer__logo {
-    display: block;
-    max-width: 200px;
-    margin: 0 auto;
-  }
+.main-footer__logo {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+}
 </style>
