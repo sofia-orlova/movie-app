@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Popular films are here</h1>
+    <h1>{{ $t('popularFilms.pageTitle')}}</h1>
     <el-row>
       <el-col :span="7">
         bla bla bla
@@ -35,6 +35,15 @@ export default {
         breakedSlots: 'breakedSlots'
       }
     )
+  },
+  i18n: {
+    messages: {
+      ru: {
+        popularFilms: {
+          pageTitle: 'Популярные фильмы'
+        }
+      }
+    }
   }
 }
 </script>

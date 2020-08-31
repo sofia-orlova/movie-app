@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Popular films are here</h1>
+    <h1>{{ $t('nowPlayingMoviePage.pageTitle')}}</h1>
     <el-row>
       <el-col :span="7">
         bla bla bla-bla
@@ -27,6 +27,15 @@ export default {
         NowPlayingMovies: 'mapPopulars'
       }
     )
+  },
+  i18n: {
+    messages: {
+      ru: {
+        nowPlayingMoviePage: {
+          pageTitle: 'Смотрят сейчас'
+        }
+      }
+    }
   }
 }
 </script>

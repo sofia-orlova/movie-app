@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <h2>Популярные люди</h2>
+    <h2>{{ $t('popularPeoplePage.pageTitle')}}</h2>
     <div class="popular-people">
       <div
         v-for="(popularPerson, index) in popularPeople"
@@ -36,6 +36,15 @@ export default {
         popularPeople: 'mapPopulars'
       }
     )
+  },
+  i18n: {
+    messages: {
+      ru: {
+        popularPeoplePage: {
+          pageTitle: 'Популярные люди'
+        }
+      }
+    }
   }
 }
 </script>
