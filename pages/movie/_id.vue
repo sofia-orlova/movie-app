@@ -63,6 +63,7 @@ export default {
   },
   data () {
     return {
+      // into mixin
       moviePageProfileTitles: {
         overview: this.$t('moviePageProfileTitles.overview')
       },

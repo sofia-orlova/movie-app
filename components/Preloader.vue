@@ -1,8 +1,8 @@
 <template>
-  <div class="preloder" v-if="loading">
+  <div v-if="loading" class="preloder">
     <div class="preloder__wrapper">
       <i class="el-icon-loading" />
-      <p>Loaging...</p>
+      <p>{{ this.$t('preloader.status') }}</p>
     </div>
   </div>
 </template>
@@ -20,16 +20,26 @@ export default {
     finish () {
       this.loading = false
     }
+  },
+  i18n: {
+    messages: {
+      ru: {
+        preloader: {
+          status: 'Loaging...'
+        }
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/main";
 .preloder {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #ffffff99;
+  background: $preloader-bg;
   z-index: 9999;
   .preloder__wrapper {
     display: flex;

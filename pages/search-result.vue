@@ -55,8 +55,6 @@ export default {
       await this.$store.commit('search/SET_SEARCH_PHRASE', searchPhrase)
       await this.$store.dispatch('search/getSearchByMovies')
     }
-    console.log(window.location.search)
-    console.log(this)
   },
   computed: {
     ...mapState('search', {

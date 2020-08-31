@@ -15,7 +15,7 @@
             class="search-form__button"
             @click="submitSearch"
           >
-            Search
+            {{ this.$t('searchBar.searchButton') }}
           </el-button>
         </el-form-item>
       </div>
@@ -39,6 +39,15 @@ export default {
       })
       await await this.$store.commit('search/SET_SEARCH_PHRASE', this.searchQuery)
       await this.$store.dispatch('search/getSearchByMovies')
+    }
+  },
+  i18n: {
+    messages: {
+      ru: {
+        searchBar: {
+          searchButton: 'Search'
+        }
+      }
     }
   }
 }

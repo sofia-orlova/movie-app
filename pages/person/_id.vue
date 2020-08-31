@@ -13,7 +13,6 @@ export default {
     await store.dispatch('person/getPerson', {
       id: route.params.id
     })
-    console.log(route.params)
   },
   computed: {
     ...mapGetters('person', {

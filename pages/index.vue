@@ -1,10 +1,16 @@
 <template>
-  <div class="welcome">
-    <el-row>
-      <h1>Добро пожаловать.</h1>
-      <p>Миллионы фильмов, сериалов и людей. Исследуйте сейчас.</p>
-      <search-bar />
-    </el-row>
+  <div class="homepage">
+    <div class="homepage__banner">
+      <el-row>
+        <h1 class="homepage__welcome">
+          {{ this.$t('homePage.welcome') }}
+        </h1>
+        <p class="homepage__tagline">
+          {{ this.$t('homePage.tagline') }}
+        </p>
+        <search-bar />
+      </el-row>
+    </div>
   </div>
 </template>
 <script>
@@ -12,49 +18,33 @@ import SearchBar from '../components/search/SearchBar'
 export default {
   name: 'HomePage',
   components: { SearchBar },
-  layout: 'main'
+  layout: 'main',
+  i18n: {
+    messages: {
+      ru: {
+        homePage: {
+          welcome: 'Добро пожаловать.',
+          tagline: 'Миллионы фильмов, сериалов и людей. Исследуйте сейчас.'
+        }
+      }
+    }
+  }
 }
 </script>
-<style lang="scss">
-  .welcome {
+<style lang="scss" scoped>
+.homepage {
+  .homepage__banner {
     background: #0169dc;
     color: #ffffff;
     padding: 50px 20px 50px 20px;
-    h1 {
+    .homepage__welcome {
       font-size: 45px;
     }
-    p {
+    .homepage__tagline {
       font-size: 30px;
       font-weight: 700;
       padding-bottom: 40px;
     }
   }
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-  .links {
-    padding-top: 15px;
-  }
+}
 </style>
