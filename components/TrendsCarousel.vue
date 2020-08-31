@@ -62,6 +62,17 @@ export default {
       await this.getWeeklyTrends()
       this.$store.commit('carousels/SET_LOADING', false)
     }
+  },
+  i18n: {
+    messages: {
+      ru: {
+        TrendsCarousel: {
+          InTrend: 'В тренде',
+          today: 'Сегодня',
+          thisWeek: 'На этой неделе'
+        }
+      }
+    }
   }
 }
 </script>

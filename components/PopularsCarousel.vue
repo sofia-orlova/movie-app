@@ -2,7 +2,7 @@
   <div>
     <div class="switcher">
       <h2 class="switcher__label">
-        Что популярно
+        {{ $t('popularsCarousel.whatIsPopular') }}
       </h2>
       <div class="switcher__button-wrapper">
         <el-button
@@ -11,7 +11,7 @@
           class="switcher__button-item"
           @click="switchToPopularMovies"
         >
-          Фильмы
+          {{ $t('popularsCarousel.movies') }}
         </el-button>
         <el-button
           round
@@ -19,7 +19,7 @@
           class="switcher__button-item"
           @click="switchToPopularTv"
         >
-          Сериалы
+          {{ $t('popularsCarousel.tvShows') }}
         </el-button>
       </div>
     </div>
@@ -61,6 +61,17 @@ export default {
       this.$store.commit('carousels/SET_LOADING', true)
       await this.getPopularTv()
       this.$store.commit('carousels/SET_LOADING', false)
+    }
+  },
+  i18n: {
+    messages: {
+      ru: {
+        popularsCarousel: {
+          whatIsPopular: 'Что популярно',
+          movies: 'Фильмы',
+          tvShows: 'Сериалы'
+        }
+      }
     }
   }
 }
